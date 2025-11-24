@@ -1,0 +1,293 @@
+.app {
+    min-height: 100vh;
+    background-color: #111827;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fundo de estrelas */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image:
+        radial-gradient(1px 1px at 10px 20px, #ffffff 60%, transparent),
+        radial-gradient(1px 1px at 40px 60px, #ffffff 60%, transparent),
+        radial-gradient(1px 1px at 130px 90px, #ffffff 60%, transparent),
+        radial-gradient(1px 1px at 90px 40px, #ffffff 60%, transparent),
+        radial-gradient(1px 1px at 200px 150px, #ffffff 60%, transparent);
+    background-size: 200px 200px;
+    animation: stars-scroll 60s linear infinite;
+}
+
+@keyframes stars-scroll {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-200px);
+    }
+}
+
+/* Conteúdo principal acima das estrelas */
+
+.main,
+.topbar,
+.mobile-nav {
+    position: relative;
+    z-index: 1;
+}
+
+/* TOPBAR */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    border-bottom: 1px solid #1f2933;
+    background-color: #111827;
+}
+
+/* Botões de ícone (menu / tema) */
+
+.icon-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.menu-toggle {
+    display: inline-flex;
+}
+
+.theme-toggle {
+    display: inline-flex;
+}
+
+/* Navegação */
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-link {
+    font-size: 14px;
+    color: #e5e7eb;
+    opacity: 0.75;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background: #f97316;
+    transition: width 0.18s ease-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link-active {
+    opacity: 1;
+}
+
+.nav-link-active::after {
+    width: 100%;
+}
+
+/* Desktop x Mobile */
+
+.desktop-nav {
+    display: none;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 24px 12px;
+    border-bottom: 1px solid #1f2933;
+    background-color: #111827;
+}
+
+/* HERO */
+
+.hero-section {
+    padding: 72px 24px 56px;
+}
+
+.hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-name {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+/* nome em degradê - igual ao exemplo */
+
+.gradient-text {
+    background: linear-gradient(90deg, #22d3ee, #3b82f6, #f97316, #f97373);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #e5e7eb;
+    max-width: 640px;
+    margin: 0 auto 28px;
+}
+
+/* Botões abaixo do texto */
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.primary-btn,
+.secondary-btn,
+.icon-btn {
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-size: 14px;
+    border: 1px solid #4b5563;
+    background-color: #111827;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.15s ease, transform 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.primary-btn {
+    background-color: #f97316;
+    border-color: #f97316;
+    color: #111827;
+}
+
+.primary-btn:hover {
+    background-color: #ea580c;
+    transform: translateY(-1px);
+}
+
+.secondary-btn:hover,
+.icon-btn:hover {
+    background-color: #1f2937;
+    border-color: #9ca3af;
+    transform: translateY(-1px);
+}
+
+.icon-btn {
+    width: 42px;
+    padding-inline: 0;
+}
+
+/* GitHub em fonte "icon" simples (usa o quadrinho do unicode) */
+.github-icon {
+    font-family: "Segoe UI Symbol", system-ui, sans-serif;
+}
+
+/* Outras seções */
+
+.section {
+    padding: 40px 24px;
+    border-top: 1px solid #1f2933;
+    background-color: #111827;
+}
+
+.section-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.section-text {
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+/* RESPONSIVO DESKTOP */
+
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: flex;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+
+    .topbar {
+        justify-content: center;
+        gap: 120px;
+    }
+
+    .hero-section {
+        padding-top: 80px;
+    }
+
+    .hero-name {
+        font-size: 48px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+}
+
+.icon-btn {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 999px;
+    border: 1px solid #4b5563;
+    background-color: #111827;
+    transition: background-color 0.15s ease, transform 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.icon-btn:hover {
+    background-color: #1f2937;
+    border-color: #9ca3af;
+    transform: translateY(-1px);
+}
+
+.github-logo-img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    object-fit: contain;
+    /* se o svg estiver preto e você quiser ele branco: */
+    filter: invert(1);
+}
