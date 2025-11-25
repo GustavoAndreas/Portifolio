@@ -743,11 +743,9 @@
     }
 
     .two-col {
-        text-align: left;
-    }
-
-    .two-col {
-        grid-template-columns: 2fr 1fr;
+        text-align: center;
+        grid-template-columns: 1fr;
+        justify-items: center;
     }
 
     .item-row {
