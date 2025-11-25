@@ -36,14 +36,14 @@ const ICONS = {
 const aboutImage = '/images/about/main-1.jpg';
 
 const NAV_ITEMS = [
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
+  { id: 'about', label: 'Sobre' },
+  { id: 'experience', label: 'Experiência' },
+  { id: 'projects', label: 'Projetos' },
   { id: 'courses', label: 'Formação' },
-  { id: 'interests', label: 'Interests' },
-  { id: 'languages', label: 'Languages' },
-  { id: 'volunteering', label: 'Volunteering' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'interests', label: 'Cursos' },
+  { id: 'languages', label: 'Idiomas' },
+  { id: 'volunteering', label: 'Voluntariados' },
+  { id: 'contact', label: 'Contatos' },
 ];
 
 const experiences = [
@@ -213,15 +213,56 @@ const courses = [
 ];
 
 const complementary = [
-  { title: 'Python e POO', certificate: '/certificados/python-poo.pdf' },
-  { title: 'Desenvolvimento Web (HTML, CSS, JavaScript, React)', certificate: '/certificados/dev-web.pdf' },
-  { title: 'Visão Computacional e IA aplicada', certificate: '/certificados/visao-ia.pdf' },
-  { title: 'Fundamentos de Redes e 5G', certificate: '/certificados/redes-5g.pdf' },
-  { title: 'C# e programação para simuladores', certificate: '/certificados/csharp-simuladores.pdf' },
-  { title: 'Git e colaboração em equipe', certificate: '/certificados/git-colaboracao.pdf' },
+  {
+    title: 'Conceitos da Tecnologia 5G',
+    provider: 'Instituto de Pesquisa FACENS',
+    contents: ['Arquitetura e espectro 5G', 'Latência e aplicações', 'Rede sem fio e casos de uso'],
+    certificate: null,
+  },
+  {
+    title: 'Introdução à Ciência da Computação com Python',
+    provider: 'Coursera',
+    contents: ['Lógica e algoritmos', 'Python básico', 'Estruturas de dados e funções'],
+    certificate: null,
+  },
+  {
+    title: 'Programação Orientada a Objetos (POO)',
+    provider: 'Fundação Bradesco',
+    contents: ['Classes e objetos', 'Encapsulamento', 'Herança e polimorfismo'],
+    certificate: null,
+  },
+  {
+    title: 'Cursando Desenvolvimento Web Completo - 20 cursos + 20 projetos',
+    provider: 'Udemy',
+    contents: ['HTML, CSS, JS', 'Frameworks e projetos práticos', 'Deploy e boas práticas'],
+    certificate: null,
+  },
+  {
+    title: 'Cursando Visão Computacional: O Guia Completo',
+    provider: 'Udemy',
+    contents: ['OpenCV aplicado', 'Pré-processamento de imagens', 'Detecção e reconhecimento'],
+    certificate: null,
+  },
+  {
+    title: 'Cursando C# Completo - Programação Orientada a Objetos + Projetos',
+    provider: 'Udemy',
+    contents: ['Sintaxe C#', 'POO aplicada', 'Projetos práticos em C#'],
+    certificate: null,
+  },
 ];
 
-const languages = ['Inglês (B2)', 'Espanhol (básico)'];
+const languages = [
+  {
+    title: 'Inglês',
+    level: 'Intermediário (B2 – Cambridge Placement Test, indicação para C1 Advanced)',
+    detail: 'Autodidata; estudos contínuos com materiais online e prática diária.',
+  },
+  {
+    title: 'Espanhol',
+    level: 'Básico',
+    detail: '1,5 anos no Centro de Estudo de Línguas (CEL) Estadão.',
+  },
+];
 
 const interests = [
   'Produto e UX',
@@ -483,7 +524,7 @@ function App() {
       <div className="stars" />
 
       <header className="topbar">
-        <div className="brand">Header</div>
+        <div className="brand">Gustavo Andreas</div>
 
         <button
           className="icon-button menu-toggle"
@@ -523,18 +564,11 @@ function App() {
       <main className="main">
         <section id="hero" className="hero-section">
           <div className="hero-inner">
-            <p className="eyebrow">Product-minded | Support-friendly | UX care</p>
             <h1 className="hero-name">
               <span className="gradient-text">Gustavo Andreas</span>
             </h1>
             <p className="hero-subtitle">
-              Estudante de Ciência da Computação que transforma problemas reais em soluções
-              funcionais, unindo base técnica, prototipação e cuidado com a experiência do usuário.
-            </p>
-            <p className="hero-description">
-              BCC na UFSCar + Técnico em Mecatrônica. Atuo com desenvolvimento web, IA/visão
-              computacional, protótipos para empresas reais e suporte que faz diferença. Interessado
-              em produto, atendimento e construir soluções bem acabadas para gente de verdade.
+              Estudante de Ciência da Computação que transforma problemas reais em soluções funcionais, unindo base técnica, prototipação e cuidado com a experiência do usuário.
             </p>
             <div className="hero-actions">
               <a href="#contact" className="primary-btn">
@@ -559,18 +593,11 @@ function App() {
         <section id="about" className="section">
           <div className="section-header">
             <h2 className="section-title">Sobre mim</h2>
-            <p className="section-kicker">Texto falando um pouco sobre mim e meu trabalho</p>
           </div>
           <div className="two-col">
             <div className="text-block">
               <p>
-                Sou Gustavo Andreas, estudante de Ciência da Computação na UFSCar e técnico em
-                Mecatrônica. Crio sistemas e protótipos que conectam lógica, tecnologia e experiência
-                do usuário para resolver problemas reais (romaneios, estoque, IA e dashboards).
-              </p>
-              <p>
-                Atuo em Beets Jr, Dominum Wear, Imaculada Tour e SeCoT, sempre com foco em produto,
-                suporte técnico e UX acessível para pessoas de verdade.
+                Sou Gustavo Andreas, estudante de Ciência da Computação. Trabalho criando soluções que conectam base técnica, prototipação e experiência do usuário para transformar necessidades reais em processos e produtos funcionais, claros e confiáveis.
               </p>
             </div>
             <div className="media-frame media-lg">
@@ -582,7 +609,6 @@ function App() {
         <section id="experience" className="section">
           <div className="section-header">
             <h2 className="section-title">Experiência</h2>
-            <p className="section-kicker">Aqui deve ter EM, Técnico, superior e idiomas</p>
           </div>
           <div className="experience-list">
             {experiences.map((job, idx) => (
@@ -665,10 +691,18 @@ function App() {
           <div className="section-header">
             <h2 className="section-title">Cursos</h2>
           </div>
-          <div className="bubble-list section-body">
+          <div className="courses-grid section-body">
             {complementary.map((item) => (
-              <div key={item.title} className="course-chip">
-                <span className="tag">{item.title}</span>
+              <div key={item.title} className="course-card">
+                <div className="course-card-head">
+                  <p className="value">{item.title}</p>
+                  <p className="label">{item.provider}</p>
+                </div>
+                <ul className="course-list">
+                  {item.contents?.map((c) => (
+                    <li key={c}>{c}</li>
+                  ))}
+                </ul>
                 {item.certificate && (
                   <button className="cert-link" type="button" onClick={() => setCertificateUrl(item.certificate)}>
                     Ver certificado
@@ -683,11 +717,15 @@ function App() {
           <div className="section-header">
             <h2 className="section-title">Idiomas</h2>
           </div>
-          <div className="bubble-list section-body">
+          <div className="courses-grid section-body">
             {languages.map((item) => (
-              <span key={item} className="tag">
-                {item}
-              </span>
+              <div key={item.title} className="course-card">
+                <div className="course-card-head">
+                  <p className="value">{item.title}</p>
+                  <p className="label">{item.level}</p>
+                </div>
+                {item.detail && <p className="item-text">{item.detail}</p>}
+              </div>
             ))}
           </div>
         </section>
