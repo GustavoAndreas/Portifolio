@@ -595,13 +595,13 @@ function App() {
             <h2 className="section-title">Sobre mim</h2>
           </div>
           <div className="two-col">
+            <div className="media-frame media-lg">
+              <img src={aboutImage} alt="Sobre mim" className="media-img" loading="lazy" />
+            </div>
             <div className="text-block">
               <p>
                 Sou Gustavo Andreas, estudante de Ciência da Computação. Trabalho criando soluções que conectam base técnica, prototipação e experiência do usuário para transformar necessidades reais em processos e produtos funcionais, claros e confiáveis.
               </p>
-            </div>
-            <div className="media-frame media-lg">
-              <img src={aboutImage} alt="Sobre mim" className="media-img" loading="lazy" />
             </div>
           </div>
         </section>

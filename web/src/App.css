@@ -295,6 +295,8 @@
     align-items: center;
     max-width: 900px;
     margin: 0 auto;
+    text-align: center;
+    justify-items: center;
 }
 
 .placeholder {
@@ -735,6 +737,10 @@
 
     .hero-inner {
         gap: 8px;
+    }
+
+    .two-col {
+        text-align: left;
     }
 
     .two-col {
