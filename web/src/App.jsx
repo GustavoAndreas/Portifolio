@@ -18,7 +18,6 @@ const ICONS = {
   pytorch: { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg', alt: 'PyTorch' },
   opencv: { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg', alt: 'OpenCV' },
   mediapipe: { src: 'https://cdn.simpleicons.org/mediapipe', alt: 'MediaPipe' },
-  rest: { src: 'https://cdn.simpleicons.org/postman', alt: 'REST' },
   data: { src: 'https://cdn.simpleicons.org/plotly', alt: 'Data Viz' },
   map: { src: 'https://cdn.simpleicons.org/googlemaps', alt: 'Logística' },
   googlemeet: { src: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg', alt: 'Google Meet' },
@@ -53,7 +52,7 @@ const experiences = [
     summary:
       'Desenvolvimento web, dashboards e integrações para clientes reais, aplicando metodologias ágeis e foco em UX.',
     tags: [],
-    icons: ['html', 'css', 'javascript', 'react', 'git', 'figma', 'firebase', 'googlemeet', 'jira', 'miro', 'clockify', 'instagram', 'canva', 'notion'],
+    icons: ['react', 'git', 'figma', 'firebase', 'googlemeet', 'jira', 'miro', 'clockify', 'instagram', 'canva', 'notion'],
     media: [
       '/images/experience/beets-4.jpg',
       '/images/experience/beets-1.jpg',
@@ -78,6 +77,7 @@ const experiences = [
       '/images/experience/dominum-2.jpg',
       '/images/experience/dominum-3.jpg',
       '/images/experience/dominum-4.jpg',
+      '/images/experience/dominum-5.jpg',
     ],
     facts: [
       'Experiência completa: produto, marketing e suporte ao cliente.',
@@ -110,7 +110,7 @@ const experiences = [
     summary:
       'Planejamento, design e divulgação de evento de computação. Recepção de palestrantes e resolução de problemas em tempo real.',
     tags: [],
-    icons: ['trello', 'html', 'css', 'javascript', 'figma', 'instagram', 'notion'],
+    icons: ['trello', 'figma', 'instagram', 'notion'],
     media: [
       '/images/experience/secot-1.jpg',
       '/images/experience/secot-2.jpg',
@@ -139,7 +139,7 @@ const projects = [
     ],
     facts: [
       'Painéis de estoque e romaneio com autenticação.',
-      'Integração via Firebase e endpoints REST simples.',
+      'Integração via Firebase e endpoints simples.',
       'Protótipo validado com equipe da Beets Jr.',
     ],
   },
@@ -183,7 +183,7 @@ const projects = [
     description:
       'Sistema de estoque para a marca Dominum, focado em controle de itens, lançamentos e alertas de reposição.',
     tags: [],
-    icons: ['react', 'html', 'rest', 'firebase', 'figma'],
+    icons: ['react', 'firebase', 'figma'],
     media: [
       '/images/projects/dominum-1.jpg',    
     ],
@@ -191,6 +191,29 @@ const projects = [
       'Prototipação inicial focada em estoque e alertas.',
       'Integração planejada com APIs simples e Firebase.',
       'Painéis para visibilidade rápida de entradas e saídas.',
+    ],
+  },
+  {
+    title: 'Colorização de Fotografias com IA',
+    year: '2025',
+    description:
+      'Implementação de uma rede neural convolucional para colorização automática de imagens em preto e branco, baseada no artigo Colorful Image Colorization (ECCV 2016).',
+    tags: [],
+    icons: ['python', 'pytorch', 'opencv', 'git'],
+    media: null,
+    facts: [],
+  },
+  {
+    title: 'Controle de Robô Virtual por Rastreamento de Gestos',
+    year: '2024',
+    description:
+      'Projeto de Robótica e acessibilidade: visão computacional para interpretar gestos manuais e controlar um robô simulado no Webots.',
+    tags: [],
+    icons: ['python', 'opencv', 'mediapipe'],
+    media: null,
+    facts: [
+      'Coleta e rotulagem de dados; treinamento de modelos (KNN, SVM, Random Forest).',
+      'Integração com simulador Webots para controle do robô virtual.',
     ],
   },
 ];
@@ -634,7 +657,7 @@ function App() {
           <div className="projects-list">
             {projects.map((project, idx) => (
               <div key={project.title} className={'item-row' + (idx % 2 ? ' reverse' : '')}>
-                <MediaCarousel items={project.media} altPrefix={project.title} />
+                {project.media ? <MediaCarousel items={project.media} altPrefix={project.title} /> : null}
                 <div className="item-content">
                   <h3>
                     {project.title} <span className="item-period">{project.year}</span>
